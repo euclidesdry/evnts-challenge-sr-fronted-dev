@@ -6,8 +6,13 @@ DOCKER_COMPOSE := docker-compose
 DOCKER_EXEC_TOOLS_APP := $(CURRENT_USER) docker exec -it $(DOCKER_NAME) sh
 NODE_INSTALL := "npm i"
 SERVER_RUN := "npm run dev"
+LINT_RUN := "npm run lint"
+LINT_FIX_RUN := "npm run lint:fix"
+LINT_FORMAT_RUN := "npm run lint:format"
+TEST_RUN := "npm run test"
+TEST_WATCH_RUN := "npm run test --watch"
 
-.PHONY: build install dev up start first stop restart clear
+.PHONY: build install dev up start first stop restart clear lint test
 
 build:
 	$(DOCKER_COMPOSE) up --build --no-recreate -d
@@ -17,6 +22,21 @@ install:
 
 dev:
 	$(DOCKER_EXEC_TOOLS_APP) -c $(SERVER_RUN)
+
+lint:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(LINT_RUN)
+
+lint-fix:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(LINT_FIX_RUN)
+
+lint-format:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(LINT_FORMAT_RUN)
+
+test:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(TEST_RUN)
+
+test-watch:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(TEST_WATCH_RUN)
 
 up:
 	$(DOCKER_COMPOSE) up -d
