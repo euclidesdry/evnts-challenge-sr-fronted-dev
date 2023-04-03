@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    image: 'node:alpine'
+    container_name: 'app'
+    tty: true
+    ports:
+      - '3680:3680'
+    working_dir: /server/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /server/app
+    environment:
+      VITE_OUTER_PORT: 3680
+      VITE_PORT: 3680
+    entrypoint: /bin/sh
