@@ -29,7 +29,7 @@
 html,
 body {
 	height: 100%;
-	background-color: white;
+	background-color: rgb(242, 242, 242);
 }
 
 body {
@@ -69,6 +69,13 @@ h6 {
 }
 
 .App {
-	max-width: 1024px;
+	max-width: 920px;
 	margin: 0 auto;
+}
+
+@media screen and (max-width: 920px) {
+	.App {
+		max-width: 100%;
+		margin: 0 1rem;
+	}
 }
