@@ -67,3 +67,8 @@ h6 {
 #__next {
 	isolation: isolate;
 }
+
+.App {
+	max-width: 1024px;
+	margin: 0 auto;
+}
