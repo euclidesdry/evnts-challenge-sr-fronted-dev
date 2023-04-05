@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import PokeLogo from "../../assets/pokemon-logo.svg";
 import { BASE_DROP_SHADOW, FILTER_HEIGHT, SMALL_ROUNDED_BORDER } from "../../constants/app";
+import { PokemonFilter } from "./components";
 
 const HeaderContainer = styled.header`
 	width: 100%;
@@ -59,47 +60,6 @@ const SearchButton = styled.button`
 	}
 `;
 
-const PokemonFilter = styled.div`
-	width: 180px;
-	background-color: #fff;
-	padding: 8px 16px;
-
-	box-shadow: ${BASE_DROP_SHADOW};
-	border-radius: ${SMALL_ROUNDED_BORDER};
-`;
-
-const List = styled.select`
-	width: 100%;
-	height: 100%;
-	background-color: #fff;
-	color: #313131;
-	border: none;
-	outline: none;
-	border-radius: ${SMALL_ROUNDED_BORDER};
-`;
-
-const Pokemons = [
-	"all",
-	"normal",
-	"fire",
-	"water",
-	"electric",
-	"grass",
-	"ice",
-	"fighting",
-	"poison",
-	"ground",
-	"flying",
-	"psychic",
-	"bug",
-	"rock",
-	"ghost",
-	"dragon",
-	"dark",
-	"steel",
-	"fairy",
-];
-
 export function Header() {
 	return (
 		<HeaderContainer>
@@ -111,15 +71,7 @@ export function Header() {
 						<img src={PokeLogo} alt="Search Pokemon Logo" />
 					</SearchButton>
 				</SearchBar>
-				<PokemonFilter>
-					<List name="pokemon-type">
-						{Array.from(Pokemons).map((item) => (
-							<option key={item} value="item" style={{ textTransform: "capitalize" }}>
-								{item}
-							</option>
-						))}
-					</List>
-				</PokemonFilter>
+				<PokemonFilter />
 			</Filters>
 		</HeaderContainer>
 	);
