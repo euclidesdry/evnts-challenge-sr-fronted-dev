@@ -1,4 +1,4 @@
-import PokeLogo from "../../../../assets/pokemon-logo.svg";
+import PokeLogo from "../../../../assets/icons/pokemon-logo.svg";
 import { Container, SearchButton, SearchInput } from "./styles";
 
 export default function SearchBar() {
