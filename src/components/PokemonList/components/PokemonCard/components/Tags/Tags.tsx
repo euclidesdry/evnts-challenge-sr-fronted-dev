@@ -8,7 +8,9 @@ export default function Tags({ types }: TagsProps) {
 	return (
 		<Container>
 			{types.map((type) => (
-				<Type key={type}>{type}</Type>
+				<Type key={type} color={type}>
+					{type}
+				</Type>
 			))}
 		</Container>
 	);

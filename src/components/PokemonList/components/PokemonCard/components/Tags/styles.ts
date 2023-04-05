@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Type = styled.span`
-	background-color: #7d7d7d;
+	background-color: ${(props) => (props.color ? `var(--bg-poke-color-${props.color})` : "#7d7d7d")};
 	color: #fff;
 	padding: 4px 8px;
 	font-size: 0.8rem;
