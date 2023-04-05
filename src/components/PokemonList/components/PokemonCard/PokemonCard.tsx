@@ -1,19 +1,20 @@
 import { Tags } from "./components";
+import { usePokemonDetails } from "../../../../hooks/pokemon";
 import { Id, Container, Name, Sprite } from "./styles";
 
 type PokemonCardProps = {
-	id: number;
+	url: string;
 	name: string;
-	sprite: string;
-	types: string[];
 };
 
-export default function PokemonCard({ name, id, sprite, types }: PokemonCardProps) {
+export default function PokemonCard({ name, url }: PokemonCardProps) {
+	const { id: pokemonId, name: pokemonName, sprite, types } = usePokemonDetails(name, url);
+
 	return (
-		<Container key={name}>
-			<Sprite src={sprite} alt="Poke icon" />
-			<Id>#{id}</Id>
-			<Name>{name}</Name>
+		<Container key={pokemonId}>
+			{sprite && <Sprite src={sprite} alt="Poke icon" />}
+			<Id>#{pokemonId}</Id>
+			<Name>{pokemonName}</Name>
 			<Tags types={types} />
 		</Container>
 	);
