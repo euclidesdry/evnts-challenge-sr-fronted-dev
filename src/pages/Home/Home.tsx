@@ -1,33 +1,18 @@
 import ReactPaginate from "react-paginate";
-import { PokemonList } from "../../components";
-import { useState } from "react";
 
-// Example items, to simulate fetching from another resources.
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+import { PokemonList } from "../../components";
+import { usePokemon } from "../../hooks/pokemon";
 
 export default function Home() {
-	// Here we use item offsets; we could also use page offsets
-	// following the API or data you're working with.
-	const [itemOffset, setItemOffset] = useState(0);
-
-	const itemsPerPage = 5;
-	// How many items to show per page.
-	const pageCount = Math.ceil(items.length / itemsPerPage);
-
-	// Invoke when user click to request another page.
-	const handlePageClick = (event: any) => {
-		const newOffset = (event.selected * itemsPerPage) % items.length;
-		console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-		setItemOffset(newOffset);
-	};
+	const { pokemonList, pageCount, handlePageChange } = usePokemon();
 
 	return (
 		<>
-			<PokemonList />
+			<PokemonList data={pokemonList?.results} />
 			<ReactPaginate
 				breakLabel="..."
 				nextLabel="next >"
-				onPageChange={handlePageClick}
+				onPageChange={handlePageChange}
 				pageRangeDisplayed={5}
 				pageCount={pageCount}
 				previousLabel="< previous"
