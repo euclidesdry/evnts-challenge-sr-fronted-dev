@@ -1,7 +1,7 @@
 import { PokemonFilter, SearchBar } from "./components";
 import { Container, Filters, Logo } from "./styles";
 
-export function Header() {
+export default function Header() {
 	return (
 		<Container>
 			<Logo src="/img/pokedex-logo.png" alt="Pokedex Logo" />

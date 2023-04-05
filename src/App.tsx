@@ -10,11 +10,9 @@ function App() {
 	return (
 		<div className="App">
 			<Header />
-
 			<Main>
 				<PokemonList />
 			</Main>
-
 			<footer className="App-footer">footer</footer>
 		</div>
 	);

@@ -1,4 +1,4 @@
-import { PokemonFilterContainer, List } from "./styles";
+import { Container, List } from "./styles";
 
 const Pokemons = [
 	"all",
@@ -22,9 +22,9 @@ const Pokemons = [
 	"fairy",
 ];
 
-export function PokemonFilter() {
+export default function PokemonFilter() {
 	return (
-		<PokemonFilterContainer>
+		<Container>
 			<List name="pokemon-type">
 				{Array.from(Pokemons).map((item) => (
 					<option key={item} value="item" style={{ textTransform: "capitalize" }}>
@@ -32,6 +32,6 @@ export function PokemonFilter() {
 					</option>
 				))}
 			</List>
-		</PokemonFilterContainer>
+		</Container>
 	);
 }

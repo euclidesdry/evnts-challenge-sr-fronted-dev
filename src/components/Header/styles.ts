@@ -19,4 +19,9 @@ export const Filters = styled.div`
 	display: flex;
 	gap: 16px;
 	margin-top: 24px;
+
+	@media (max-width: 486px) {
+		flex-direction: column;
+		gap: 8px;
+	}
 `;
