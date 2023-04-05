@@ -26,4 +26,5 @@ export const Id = styled.h6`
 
 export const Name = styled.h4`
 	font-weight: 800;
+	text-transform: capitalize;
 `;
