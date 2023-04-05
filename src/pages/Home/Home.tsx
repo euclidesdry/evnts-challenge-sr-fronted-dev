@@ -5,7 +5,7 @@ import { useState } from "react";
 // Example items, to simulate fetching from another resources.
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
-export function Home() {
+export default function Home() {
 	// Here we use item offsets; we could also use page offsets
 	// following the API or data you're working with.
 	const [itemOffset, setItemOffset] = useState(0);
