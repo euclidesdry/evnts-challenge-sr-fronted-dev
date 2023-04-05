@@ -1,6 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
 
 :root {
+	--bg-light-color: #fff;
+	--bg-dark-color: #000;
+	--bg-after-color: rgba(14, 12, 14, 0.6);
+	--bg-poke-color-normal: rgb(169, 165, 158);
+	--bg-poke-color-fighting: rgb(143, 92, 92);
+	--bg-poke-color-flying: rgb(153, 108, 137);
+	--bg-poke-color-poison: rgb(122, 102, 133);
+	--bg-poke-color-ground: rgb(137, 115, 74);
+	--bg-poke-color-rock: rgb(173, 138, 89);
+	--bg-poke-color-bug: rgb(98, 158, 96);
+	--bg-poke-color-ghost: rgb(138, 92, 148);
+	--bg-poke-color-steel: rgb(141, 116, 52);
+	--bg-poke-color-fire: rgb(187, 63, 1);
+	--bg-poke-color-water: rgb(101, 145, 158);
+	--bg-poke-color-grass: rgb(85, 124, 101);
+	--bg-poke-color-electric: rgb(119, 106, 37);
+	--bg-poke-color-psychic: rgb(123, 56, 104);
+	--bg-poke-color-ice: rgb(100, 118, 152);
+	--bg-poke-color-dragon: rgb(113, 82, 145);
+	--bg-poke-color-dark: rgb(148, 147, 144);
+	--bg-poke-color-fairy: rgb(135, 78, 123);
+	--bg-poke-color-unknown: rgb(112, 91, 37);
+	--bg-poke-color-shadow: rgb(98, 33, 79);
+
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;

@@ -33,6 +33,7 @@ function App() {
 		console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
 		setItemOffset(newOffset);
 	};
+
 	return (
 		<div className="App">
 			<Header />
