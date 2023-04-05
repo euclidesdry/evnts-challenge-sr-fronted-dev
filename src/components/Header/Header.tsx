@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 import PokeLogo from "../../assets/pokemon-logo.svg";
-
-const FILTER_HEIGHT = "48px";
-const BASE_DROP_SHADOW = "0px 4px 8px rgba(0, 0, 0, 0.18)";
-const SMALL_ROUNDED_BORDER = "16px";
+import { BASE_DROP_SHADOW, FILTER_HEIGHT, SMALL_ROUNDED_BORDER } from "../../constants/app";
 
 const HeaderContainer = styled.header`
 	width: 100%;
@@ -81,6 +78,28 @@ const List = styled.select`
 	border-radius: ${SMALL_ROUNDED_BORDER};
 `;
 
+const Pokemons = [
+	"all",
+	"normal",
+	"fire",
+	"water",
+	"electric",
+	"grass",
+	"ice",
+	"fighting",
+	"poison",
+	"ground",
+	"flying",
+	"psychic",
+	"bug",
+	"rock",
+	"ghost",
+	"dragon",
+	"dark",
+	"steel",
+	"fairy",
+];
+
 export function Header() {
 	return (
 		<HeaderContainer>
@@ -94,27 +113,11 @@ export function Header() {
 				</SearchBar>
 				<PokemonFilter>
 					<List name="pokemon-type">
-						<option value="all">All</option>
-						<option value="normal">Normal</option>
-						<option value="fighting">Fighting</option>
-						<option value="flying">Flying</option>
-						<option value="poison">Poison</option>
-						<option value="ground">Ground</option>
-						<option value="rock">Rock</option>
-						<option value="bug">Bug</option>
-						<option value="ghost">Ghost</option>
-						<option value="steel">Steel</option>
-						<option value="fire">Fire</option>
-						<option value="water">Water</option>
-						<option value="grass">Grass</option>
-						<option value="electric">Electric</option>
-						<option value="psychic">Psychic</option>
-						<option value="ice">Ice</option>
-						<option value="dragon">Dragon</option>
-						<option value="dark">Dark</option>
-						<option value="fairy">Fairy</option>
-						<option value="unknown">Unknown</option>
-						<option value="shadow">Shadow</option>
+						{Array.from(Pokemons).map((item) => (
+							<option key={item} value="item" style={{ textTransform: "capitalize" }}>
+								{item}
+							</option>
+						))}
 					</List>
 				</PokemonFilter>
 			</Filters>
