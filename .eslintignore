@@ -3,3 +3,5 @@ dist/
 .prettierrc
 .eslintrc
 env.d.ts
+*.config.js
+*.config.ts
