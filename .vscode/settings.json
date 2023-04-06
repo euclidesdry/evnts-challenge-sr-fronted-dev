@@ -1,0 +1,20 @@
+{
+	"conventionalCommits.scopes": [
+		"app",
+		"component",
+		"constants",
+		"styles",
+		"services",
+		"page",
+		"hooks",
+		"files",
+		"tests"
+	],
+	"prettier.endOfLine": "lf",
+	"prettier.jsxSingleQuote": true,
+	"prettier.printWidth": 100,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"cSpell.words": ["Pikachu", "pokedex", "Pokedex", "testname"],
+	"typescript.tsdk": "node_modules\\typescript\\lib"
+}
