@@ -4,6 +4,7 @@ CURRENT_USER :=
 DOCKER_NAME := app
 DOCKER_COMPOSE := docker-compose
 DOCKER_EXEC_TOOLS_APP := $(CURRENT_USER) docker exec -it $(DOCKER_NAME) sh
+NPM_INSTALL := "npm install -g npm@latest"
 NODE_INSTALL := "npm i"
 SERVER_RUN := "npm run dev"
 LINT_RUN := "npm run lint"
@@ -12,10 +13,13 @@ LINT_FORMAT_RUN := "npm run lint:format"
 TEST_RUN := "npm run test"
 TEST_WATCH_RUN := "npm run test --watch"
 
-.PHONY: build install dev up start first stop restart clear lint test
+.PHONY: build install dev up start setup stop restart clear lint test
 
 build:
 	$(DOCKER_COMPOSE) up --build --no-recreate -d
+
+npm-update:
+	$(DOCKER_EXEC_TOOLS_APP) -c $(NODE_INSTALL)
 
 install:
 	$(DOCKER_EXEC_TOOLS_APP) -c $(NODE_INSTALL)
@@ -44,7 +48,7 @@ up:
 start: up dev
 	# This will up the docker env and run the npm run dev command
 
-first: build install dev
+setup: build npm-update install dev
 	# This will build the env, up it and run the npm install and then run npm run dev command
 
 stop:
