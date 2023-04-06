@@ -6,7 +6,7 @@ type TagsProps = {
 
 export default function Tags({ types }: TagsProps) {
 	return (
-		<Container>
+		<Container data-test-id="PokemonCard-component-Tags">
 			{types.map((type) => (
 				<Type key={type} color={type}>
 					{type}
