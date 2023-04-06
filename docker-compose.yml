@@ -1,18 +1,30 @@
-version: '3.8'
+version: "3.8"
 
 services:
   app:
-    image: 'node:alpine'
-    container_name: 'app'
+    image: "node:alpine"
+    container_name: "app"
     tty: true
     ports:
-      - '3680:3680'
-    working_dir: /server/app
+      - "3680:3680"
+    working_dir: /app
     volumes:
-      - type: bind
-        source: ./
-        target: /server/app
+      - .:/app
+      # - pokemon-challenge:/app
     environment:
       VITE_OUTER_PORT: 3680
       VITE_PORT: 3680
     entrypoint: /bin/sh
+
+  # cypress:
+  #   image: cypress/included:9.6.1
+  #   depends_on:
+  #     - app
+  #   volumes:
+  #     - .:/app
+  #     - /dev/shm:/dev/shm
+  #   environment:
+  #     - CYPRESS_baseUrl=http://app:3000
+  #   entrypoint: ["npm", "run", "cypress", "open"]
+# volumes:
+#   pokemon-challenge:
