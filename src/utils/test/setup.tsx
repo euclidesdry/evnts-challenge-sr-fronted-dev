@@ -1,22 +1,43 @@
 import React, { PropsWithChildren, ReactElement } from "react";
 // eslint-disable-next-line import/named
-import { RenderOptions as TestingLibraryRenderOptions, render as testingLibraryRender } from "@testing-library/react";
+import {
+	RenderOptions as TestingLibraryRenderOptions,
+	RenderHookOptions,
+	render as testingLibraryRender,
+	renderHook as testingLibraryRenderHook,
+} from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			retry: false,
+			cacheTime: Infinity,
+		},
+	},
+});
 
-type AllTheProvidersProps = PropsWithChildren & object;
+type AllTheProvidersProps = PropsWithChildren;
 
-const AllTheProviders = ({ children }: AllTheProvidersProps) => {
+export const AllTheProviders = ({ children }: AllTheProvidersProps) => {
 	return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 };
 
 type CustomRenderOptions = Omit<TestingLibraryRenderOptions, "wrapper">;
 
-const customRender = (ui: ReactElement, options?: CustomRenderOptions) =>
-	testingLibraryRender(ui, { wrapper: AllTheProviders, ...options });
+const customRender = (ui: ReactElement, options?: CustomRenderOptions) => {
+	return testingLibraryRender(ui, { wrapper: AllTheProviders, ...options });
+};
+
+function customRenderHook<HookReturn = object, Props = unknown>(
+	hook: () => HookReturn,
+	options?: RenderHookOptions<Props>
+) {
+	return testingLibraryRenderHook(hook, { wrapper: AllTheProviders, ...options });
+}
 
 // eslint-disable-next-line import/export
 export * from "@testing-library/react";
+
 // eslint-disable-next-line import/export
-export { customRender as render };
+export { customRender as render, customRenderHook as renderHook };
