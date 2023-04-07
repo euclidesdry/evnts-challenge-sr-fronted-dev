@@ -9,7 +9,8 @@
 		"hooks",
 		"files",
 		"tests",
-		"lint"
+		"lint",
+		"types"
 	],
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,
