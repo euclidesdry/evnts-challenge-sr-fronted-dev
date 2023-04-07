@@ -12,7 +12,7 @@ export default function PokemonCard({ name, url }: PokemonCardProps) {
 
 	return (
 		<Container key={pokemonId}>
-			{sprite && <Sprite src={sprite} alt="Poke icon" />}
+			{sprite && <Sprite src={sprite} alt="Pokemon icon" />}
 			<Id>#{pokemonId}</Id>
 			<Name>{pokemonName}</Name>
 			<Tags types={types} />
