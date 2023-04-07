@@ -78,7 +78,7 @@ export type PokemonDetailsType = {
 	game_indices: [];
 	height: number;
 	held_items: [];
-	id: 1;
+	id: number;
 	is_default: boolean;
 	location_area_encounters: string;
 	movies: [];
