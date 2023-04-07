@@ -1,5 +1,5 @@
 import { Tags } from "./components";
-import { usePokemonDetails } from "../../../../hooks/pokemon";
+import { usePokemonDetails } from "~/hooks/pokemon";
 import { Id, Container, Name, Sprite } from "./styles";
 
 type PokemonCardProps = {
