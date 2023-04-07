@@ -8,7 +8,13 @@ export default async (): Promise<Config> => {
 		moduleDirectories: ["node_modules", "src"],
 		moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
 		setupFilesAfterEnv: ["<rootDir>/jest/setup.js"],
-		collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
+		collectCoverageFrom: [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!src/**/*.d.ts",
+			"!src/**/index.{js,jsx,ts,tsx}",
+			"!src/**/test/**/*",
+			"!src/**/stories/**/*",
+		],
 		testMatch: ["<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}", "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"],
 		transform: {
 			".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
