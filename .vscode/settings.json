@@ -10,7 +10,8 @@
 		"files",
 		"tests",
 		"lint",
-		"types"
+		"types",
+		"mocks"
 	],
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,

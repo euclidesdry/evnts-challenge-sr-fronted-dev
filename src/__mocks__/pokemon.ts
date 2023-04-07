@@ -12,7 +12,7 @@ export const pokemonDetailsBuilder = (id: number, name: string = "empoleon") => 
 		species: {
 			...pokemonDetails.species,
 			name,
-			url: `${BASE_URL}/pokemon-species/${id}`,
+			url: `${BASE_URL}/pokemon/${id}/`,
 		},
 		sprites: {
 			other: {
@@ -21,6 +21,7 @@ export const pokemonDetailsBuilder = (id: number, name: string = "empoleon") => 
 					front_shiny: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${id}.png`,
 				},
 			},
+			front_default: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
 		},
 	});
 };
