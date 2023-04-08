@@ -4,11 +4,11 @@ import { PokemonList } from "../../components";
 import { usePokemon } from "../../hooks/pokemon";
 
 export default function Home() {
-	const { pokemonList, pageCount, handlePageChange } = usePokemon();
-
+	const { pokemonList, searchTerm, isLoading, isSearchError, pageCount, handlePageChange } = usePokemon();
 	return (
 		<>
-			<PokemonList data={pokemonList?.results} />
+			<PokemonList data={pokemonList} loading={isLoading} searchTerm={searchTerm} isSearchError={isSearchError} />
+
 			<ReactPaginate
 				breakLabel="..."
 				nextLabel="next >"
