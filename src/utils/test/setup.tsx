@@ -7,6 +7,7 @@ import {
 	renderHook as testingLibraryRenderHook,
 } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AppContextProvider } from "~/contexts/App";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -20,7 +21,11 @@ const queryClient = new QueryClient({
 type AllTheProvidersProps = PropsWithChildren;
 
 export const AllTheProviders = ({ children }: AllTheProvidersProps) => {
-	return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+	return (
+		<QueryClientProvider client={queryClient}>
+			<AppContextProvider>{children}</AppContextProvider>
+		</QueryClientProvider>
+	);
 };
 
 type CustomRenderOptions = Omit<TestingLibraryRenderOptions, "wrapper">;
