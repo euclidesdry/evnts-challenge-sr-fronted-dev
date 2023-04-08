@@ -1,4 +1,4 @@
-import { Tags } from "./components";
+import { Tags } from "~/components/Tags";
 import { usePokemonDetails } from "~/hooks/pokemon";
 import { Id, Container, Name, Sprite } from "./styles";
 import { useAppContext } from "~/contexts/App";

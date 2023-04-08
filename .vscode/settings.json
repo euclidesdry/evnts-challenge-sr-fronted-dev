@@ -21,6 +21,16 @@
 	"prettier.printWidth": 100,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
-	"cSpell.words": ["bulbasaur", "empoleon", "pikachu", "Pikachu", "pokedex", "Pokedex", "pokemons", "testname"],
+	"cSpell.words": [
+		"bulbasaur",
+		"empoleon",
+		"pikachu",
+		"Pikachu",
+		"pokedex",
+		"Pokedex",
+		"POKÉDEX",
+		"pokemons",
+		"testname"
+	],
 	"typescript.tsdk": "node_modules\\typescript\\lib"
 }
