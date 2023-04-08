@@ -11,7 +11,8 @@
 		"tests",
 		"lint",
 		"types",
-		"mocks"
+		"mocks",
+		"utils"
 	],
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,

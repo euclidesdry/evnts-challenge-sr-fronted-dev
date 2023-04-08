@@ -1,7 +1,9 @@
-export type ResultType = {
+export type BaseType = {
 	name: string;
 	url: string;
 };
+
+export type ResultType = BaseType;
 
 export type ListPokemonsType = {
 	count: number;
@@ -10,10 +12,7 @@ export type ListPokemonsType = {
 	results: ResultType[];
 };
 
-type PokemonAbilityType = {
-	name: string;
-	url: string;
-};
+type PokemonAbilityType = BaseType;
 
 type PokemonAbilityProps = {
 	ability: PokemonAbilityType;
@@ -21,10 +20,7 @@ type PokemonAbilityProps = {
 	slot: number;
 };
 
-type Forms = {
-	name: string;
-	url: string;
-};
+type Forms = BaseType;
 
 type SpritesProps = {
 	back_default: string;
@@ -56,19 +52,13 @@ type SpritesProps = {
 
 type TypesProps = {
 	slot: number;
-	type: {
-		name: string;
-		url: string;
-	};
+	type: BaseType;
 };
 
 export type StatProps = {
 	base_stat: number;
 	effort: number;
-	stat: {
-		name: string;
-		url: string;
-	};
+	stat: BaseType;
 };
 
 export type PokemonDetailsType = {
@@ -85,12 +75,22 @@ export type PokemonDetailsType = {
 	name: string;
 	order: number;
 	past_types: [];
-	species: {
-		name: string;
-		url: string;
-	};
+	species: BaseType;
 	sprites: SpritesProps;
 	stats: StatProps[];
 	types: TypesProps[];
 	weight: number;
+};
+
+export type PokemonType = {
+	pokemon: ResultType;
+	slot: 2;
+};
+
+export type ListPokemonByType = {
+	id: number;
+	name: string;
+	move_damage_class: BaseType;
+	moves: BaseType[];
+	pokemon: PokemonType[];
 };
