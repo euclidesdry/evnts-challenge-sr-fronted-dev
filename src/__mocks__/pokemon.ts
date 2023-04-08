@@ -1,9 +1,13 @@
-import { pokemonDetails } from "~/constants/mocks/server/pokemon";
+import { pokemonDetails, pokemonTypes } from "~/constants/mocks/server/pokemon";
 import { BASE_URL } from "~/services";
 import { PokemonDetailsType } from "~/types/services/pokemon";
 import { RecursivePartial } from "~/utils/types";
 
 export const detailsBuilder = (props: RecursivePartial<PokemonDetailsType> = {}) => ({ ...pokemonDetails, ...props });
+
+export const pokemonTypesBuilder = () => ({
+	results: pokemonTypes,
+});
 
 export const pokemonDetailsBuilder = (id: number, name: string = "empoleon") => {
 	return detailsBuilder({
