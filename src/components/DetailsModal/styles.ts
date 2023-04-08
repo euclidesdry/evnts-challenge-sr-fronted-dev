@@ -52,7 +52,7 @@ export const Image = styled.img`
 
 export const PokemonId = styled.h5``;
 
-export const FullName = styled.h5`
+export const Genera = styled.h5`
 	color: #bbb;
 `;
 

@@ -1,4 +1,4 @@
-import { ListPokemonByType, ListPokemonsType, PokemonDetailsType } from "../types/services/pokemon";
+import { ListPokemonByType, ListPokemonSpecies, ListPokemonsType, PokemonDetailsType } from "../types/services/pokemon";
 import { pokeApi } from "./config";
 
 export async function listPokemons(limit = 9, offset = 0): Promise<ListPokemonsType> {
@@ -22,6 +22,11 @@ export async function listPokemonsType(): Promise<ListPokemonsType["results"]> {
 }
 
 export async function listPokemonsTypeById(id: number): Promise<ListPokemonByType["pokemon"]> {
-	const response = await pokeApi.get<ListPokemonByType>(`/type/${id}`);
+	const response = await pokeApi.get<ListPokemonByType>(`/type/${id}/`);
 	return response.data.pokemon;
+}
+
+export async function listPokemonSpecies(pokemonId: number): Promise<ListPokemonSpecies> {
+	const response = await pokeApi.get<ListPokemonSpecies>(`/pokemon-species/${pokemonId}/`);
+	return response.data;
 }

@@ -82,6 +82,22 @@ export type PokemonDetailsType = {
 	weight: number;
 };
 
+export type FlavorTextEntry = {
+	flavor_text: string;
+	language: BaseType;
+	version: BaseType;
+};
+
+export type ListPokemonSpecies = {
+	genera: [
+		{
+			genus: string;
+			language: BaseType;
+		}
+	];
+	flavor_text_entries: FlavorTextEntry[];
+};
+
 export type PokemonType = {
 	pokemon: ResultType;
 	slot: 2;
