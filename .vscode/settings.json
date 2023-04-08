@@ -13,7 +13,8 @@
 		"types",
 		"mocks",
 		"utils",
-		"helpers"
+		"helpers",
+		"contexts"
 	],
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,
