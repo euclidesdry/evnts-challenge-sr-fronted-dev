@@ -41,4 +41,25 @@ export const CloseButton = styled.button`
 
 export const Body = styled.div`
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+export const Image = styled.img`
+	width: 160px;
+`;
+
+export const PokemonId = styled.h5``;
+
+export const FullName = styled.h5`
+	color: #bbb;
+`;
+
+export const Entries = styled.div`
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 8px;
 `;
