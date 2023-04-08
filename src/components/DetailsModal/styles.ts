@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 `;
 
 export const Content = styled.div`
-	width: 400px;
+	width: 360px;
 	background-color: #fff;
 	padding: 24px;
 	padding-top: 0;
