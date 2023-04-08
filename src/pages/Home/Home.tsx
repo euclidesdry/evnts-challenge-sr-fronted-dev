@@ -2,9 +2,19 @@ import ReactPaginate from "react-paginate";
 
 import { PokemonList } from "../../components";
 import { usePokemon } from "../../hooks/pokemon";
+import DetailsModal from "~/components/DetailsModal";
+import { useAppContext } from "~/contexts/App";
 
 export default function Home() {
-	const { pokemonList, searchTerm, isLoading, isSearchError, pageCount, handlePageChange } = usePokemon();
+	const { searchTerm, selectedPokemon, setSelectedPokemon } = useAppContext();
+	const { pokemonList, isLoading, isSearchError, pageCount, handlePageChange } = usePokemon();
+
+	const isModalOpen = typeof selectedPokemon === "number";
+
+	function handleCloseModal() {
+		setSelectedPokemon(null);
+	}
+
 	return (
 		<>
 			<PokemonList data={pokemonList} loading={isLoading} searchTerm={searchTerm} isSearchError={isSearchError} />
@@ -29,6 +39,8 @@ export default function Home() {
 				activeClassName="app-pagination__item--active"
 				disabledClassName="app-pagination__item--disabled"
 			/>
+
+			<DetailsModal id={selectedPokemon} isOpen={isModalOpen} onClose={handleCloseModal} />
 		</>
 	);
 }

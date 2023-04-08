@@ -1,8 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { useAppContext } from "~/contexts/App";
 import { paginatePokemonByType } from "~/helpers/filters";
 import { usePokemonByNameService, usePokemonByTypeService, usePokemonService } from "~/hooks/services";
-import { listPokemonInfoByName } from "~/services/pokemon";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -30,7 +28,6 @@ export default function usePokemon() {
 		pokemonList: currentPokemonList,
 		pageCount,
 		handlePageChange,
-		searchTerm,
 		isLoading: isFetching || isFetchingByType || isFetchingByName,
 		isSearchError: isError,
 	};
