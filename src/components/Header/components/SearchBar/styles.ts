@@ -18,6 +18,28 @@ export const SearchInput = styled.input`
 	color: #222222;
 	border: none;
 	outline: none;
+	:-internal-autofill-selected {
+		background-color: #fff !important;
+	}
+`;
+
+export const ClearSearchBarButton = styled.button`
+	width: 32px;
+	height: 100%;
+	padding: 0 32px;
+	border: none;
+	background-color: transparent;
+	color: #222222;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: scale(1.15);
+	}
+
+	&:active {
+		transition: all 0.2s ease;
+		transform: scale(0.95);
+	}
 `;
 
 export const SearchButton = styled.button`
@@ -28,10 +50,32 @@ export const SearchButton = styled.button`
 	color: #fff;
 	border: none;
 	border-radius: 8px;
+	transition: all 0.3s ease;
 	box-shadow: 0px 4px 8px rgba(200, 9, 60, 0.543);
 	cursor: pointer;
 
+	&:hover {
+		background-color: rgb(255 22 95);
+		transform: scale(1.1);
+	}
+
+	&:active {
+		background-color: rgb(150 22 95);
+		transition: all 0.2s ease;
+		transform: scale(0.95);
+	}
+
 	img {
+		transition: all 0.2s ease;
 		filter: invert(1);
+
+		&:hover {
+			transition: all 0.5s ease;
+			transform: rotate(145deg);
+		}
+
+		&:active {
+			transform: rotate(0deg);
+		}
 	}
 `;
